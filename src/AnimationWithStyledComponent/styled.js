@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
-const Circle = styled.div`
-  width: 300px;
-  height: 300px;
+const size = 300;
+
+export const Circle = styled.div`
+  width: ${size}px;
+  height: ${size}px;
   background: blue;
   border-radius: 50%;
 `;
 
 export const transitionSpeed = 500;
 
-const Inner = styled.div`
+export const Inner = styled.div`
   position: relative;
-  left: ${({ animated }) => animated ? '100%' : '0'};
+  left: ${({ animated }) => animated ? `calc(100% - ${size}px)` : '0'};
   display: inline-block;
   transition: left ${transitionSpeed}ms ease;
 `;
-
-export { Circle, Inner };
